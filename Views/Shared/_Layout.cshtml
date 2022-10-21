@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BeerShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+
+    @*<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />*@
+    @*<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>*@
+    @*<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="JS/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">*@
+
+    <link href="//code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+        <script src="~/Content/js/jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+        <script src="//code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+    @*<link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>*@
+
+    @*<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>*@
+
+
+    @*<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="JS/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>*@
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-logo" asp-action="Index" asp-controller="Home">
+                    <img src="~/Images/logo4.jpg" style="width:70px; height:60px" alt="">
+                </a>
+                @*<form class="form-inline">*@
+                <div class="navbar-collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav ml-auto">
+                        @*@using (Html.BeginForm("Index", "Search", FormMethod.Get, new { @Id = "searchForm", @Class = "searchBox" }))
+                        {
+                            <input type="text" name="searchtext" placeholder="Search..." maxlength="1000">
+                            <input type="submit" value="Search">
+                        }*@
+
+                        @*<script type="text/javascript">
+                        $(document).ready(function() {
+
+                            $("#txtSearch").autocomplete({
+
+                                source: '@Url.Action("GetProducts","Search")',
+
+                                minLength: 1
+
+                             });
+                         });
+
+                        </script>
+
+                        <div class="form-group">
+                            SEARCH:
+                            @Html.TextBox("searchTerm", null, new { id = "txtSearch", Class = "autosuggest" })
+                            <input type="submit" value="Search">
+                        </div>*@
+
+                        <button class="btn btn-outline-success">
+                            <img src="~/Images/shopping-cart.png" style="margin-right: 2px; height: 21px ;padding-bottom:2px" />
+                            <a type="button" asp-action="NoItemsInCart" asp-controller="ShoppingCart"></a>
+                            @await Component.InvokeAsync("ShoppingCartSummary")
+                        </button>
+                        @*<partial name="_LoginPartial" />*@
+                        @*<div class="btn-group">*@
+                        @*<button type="button" class="btn btn-outline-success"><a asp-action="Index" asp-controller="ShoppingCart"><font color="#000000">Cart</font></a></button>*@
+
+                        <button type="button" class="btn btn-outline-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius:3px">
+                            <font color="#000000">Menu</font> <img src="~/Images/menu.png" style="margin-left: 2px; height: 21px ;padding-bottom:2px" alt="Menu">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" style="background-color:#B2DFDB">
+                            <a class="dropdown-item" type="button" asp-action="List" asp-controller="Product">Products</a>
+                            <a class="dropdown-item" type="button" asp-action="About" asp-controller="About">About Us</a>
+                            <a class="dropdown-item" type="button" asp-action="Contact" asp-controller="Contact">Contact</a>
+                        </div>
+                        @*</div>*@
+                    </ul>
+                </div>
+                @*</form>*@
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="footer" class="col-6">
+                    <font color="#000000">&copy; 2022 - House of Beers - The shop that you need it </font>
+                </div>
+                <div id="socials" class="col-6">
+                    <a href="https://www.facebook.com/" style="margin-right:15px"><img src="~/images/facebook1.png" style="width:30px;height:30px" /></a>
+                    <a href="https://twitter.com/" style="margin-right:15px"><img src="~/images/twitter.png" style="width:30px;height:30px" /></a>
+                    <a href="https://www.instagram.com/" style="margin-right:15px"><img src="~/images/instagram.png" style="width:30px;height:30px" /></a>
+                    <a href="https://www.google.com/" style="margin-right:15px"><img src="~/images/google.png" style="width:30px;height:30px" /></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

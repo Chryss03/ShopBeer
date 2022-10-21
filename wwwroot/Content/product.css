@@ -1,0 +1,90 @@
+﻿
+body {
+    background-color: #00C897
+}
+
+.col-3 {
+    border-radius: 10px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /*margin-top:15%;*/
+    margin-left: 5%;
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.vertical-center {
+    /*margin: 0;
+    position: absolute;
+    left:50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+h6 {
+    margin-left: 5px;
+    text-align: left;
+}
+
+table {
+    display: table;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+#category #specificatii {
+    width: 90%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+
+#category #js-product-list .js-product-miniature {
+    margin: 10px 7px 10px 10px;
+    float: left;
+}
+
+#products .product-miniature, .featured-products .product-miniature, .product-accessories .product-miniature, .product-miniature .product-miniature {
+    margin: 0 0.225rem;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+
+#category .thumbnail-container {
+    position: relative;
+    height: unset;
+    width: 257px;
+    background: #fff;
+    padding: 15px 0px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 11%);
+    transition: all 0.3s;
+}
+
+#products .product-thumbnail, .featured-products .product-thumbnail, .product-accessories .product-thumbnail, .product-miniature .product-thumbnail {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: transparent;
+    display: table;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}

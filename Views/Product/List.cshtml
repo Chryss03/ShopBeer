@@ -1,0 +1,181 @@
+﻿
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BeerShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/product.css" />
+
+
+</head>
+
+@*<script type="text/javascript">
+        $(document).ready(function () {
+            $("#term").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/Search/AutoComplete/',
+                        type: "POST",
+                        dataType: "json",
+                        data: { prefix: request.term },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return item;
+                            }))
+                        }
+                        //error: function (response) {
+                        //    alert(response.responseText);
+                        //},
+                        //failure: function (response) {
+                        //    alert(response.responseText);
+                        //}
+                    })
+                },
+                //select: function (e, i) {
+                //    $("#hfProduct").val(i.item.val);
+                //},
+                //minLength: 1
+                messages: {
+                    noResults: "", results: ""
+                }
+            });
+        })
+    </script>*@
+
+@*<script type="text/javascript">
+            $(document).ready(function () {
+                $('#productName').autocomplete({
+                    source: '@Url.Action("Index", "Search")'
+                });
+            });
+    </script>*@
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Name").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/Search/AutoComplete",
+                    type: "POST",
+                    dataType: "json",
+                    data: { prefix: request.term },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return { label: item.Name, value: item.Name };
+                        }))
+
+                    }
+                })
+            },
+            messages: {
+                noResults: "", results: ""
+            }
+        });
+    })
+</script>
+
+<div>
+    <h2>House of Beers</h2>
+</div>
+
+<h2>@Model.CurrentCategory</h2>
+<div>
+    <a class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Category<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a asp-controller="Product" asp-action="List">All Beers</a></li>
+            <li><a asp-controller="Product" asp-action="List" asp-route-category="BlondeAle">Blonde Ale</a></li>
+            <li><a asp-controller="Product" asp-action="List" asp-route-category="GoldenAle">Golden Ale</a></li>
+            <li><a asp-controller="Product" asp-action="List" asp-route-category="AmericanPale">American Pale</a></li>
+        </ul>
+    </a>
+    <button class="btn btn-outline-success">
+        <a type="button" asp-action="Create" asp-controller="Product">Create Product</a>
+    </button>
+    @*<div>
+            <button class="btn btn-outline-success">
+                <a type="button" asp-action="Index" asp-controller="Search">Search Product</a>
+            </button>
+        </div>*@
+</div>
+
+
+<form method="get" style="text-align:center; align-items:center;" asp-action="Index" asp-controller="Search">
+    <p>
+        <input type="search" placeholder="Enter Product name..." id="term" name="term" style="width:500px" class="autosuggest" />
+        <input type="hidden" id="hfProduct" name="Id" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+    </p>
+    @*@Html.Partial("ProductsSummary", product)*@
+</form>
+@*<fieldset>
+        <legend>Search Product</legend>
+        <input type="text" id="productName" placeholder="Input your keyword">
+    </fieldset>*@
+
+<div class="container">
+    <div class="row">
+        @{ foreach (Product product in Model.Products)
+            {
+                @*<div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="@product.ImageUrl" alt="" />
+                            <div class="caption">
+                                <h3 class="pull-right">@product.Price.ToString("c")</h3>
+                                <h3>
+                                    <a>@product.Name</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>*@
+
+                <div class="col-3">
+                    @Html.Partial("ProductsSummary", product)
+                </div>
+
+
+                @*<partial name="ProductSummary"/>*@
+            }
+        }
+    </div>
+</div>
+
+@*<script type="text/javascript">
+        $(document).ready(function () {
+            $("#term").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/Search/AutoComplete/',
+                        type: "POST",
+                        dataType: "json",
+                        data: { prefix: request.term },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return item;
+                            }))
+                        }
+                        //error: function (response) {
+                        //    alert(response.responseText);
+                        //},
+                        //failure: function (response) {
+                        //    alert(response.responseText);
+                        //}
+                    })
+                },
+                //select: function (e, i) {
+                //    $("#hfProduct").val(i.item.val);
+                //},
+                //minLength: 1
+                messages: {
+                    noResults: "", results: ""
+                }
+            });
+        })
+    </script>*@
+
+
+
+
+
