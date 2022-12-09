@@ -40,9 +40,7 @@ namespace ShopBeer.Controllers
 
         public JsonResult AutoComplete(string prefix)
         {
-            //List<string> Products = _appDbContext.Products.Where(s => s.Name.StartsWith(prefix))
-
-            //  .Select(x => x.Name).ToList();
+          
 
             List<Product> ObjList = new List<Product>()
                 {
@@ -53,18 +51,14 @@ namespace ShopBeer.Controllers
 
 
             };
-            //Searching records from list using LINQ query  
+           
             var Name = (from N in ObjList
                         where N.Name.StartsWith(prefix)
                         select new { N.Name });
             return Json(Name);
 
-            //return Json(Products);
+            
         }
-        //public ActionResult Search(string term)
-        //{
-        //    var names = _appDbContext.Products.Where(p => p.Name.Contains(term)).Select(p => p.Name).ToList();
-        //    return Json(names);
-        //}
+        
     }
 }

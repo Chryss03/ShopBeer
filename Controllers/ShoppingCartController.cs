@@ -63,20 +63,7 @@ namespace ShopBeer.Controllers
 
         public IActionResult Checkout()
         {
-            //var items = _shoppingCart.GetShoppingCartItems();
-            //_shoppingCart.ShoppingCartItems = items;
-            //if (_shoppingCart.ShoppingCartItems.Count == 0)
-            //{
-            //    ModelState.AddModelError("", "Your card is empty, add some drinks first");
-            //}
-
-            //if (ModelState.IsValid)
-            //{
-                //_orderRepository.CreateOrder(order);
-                _shoppingCart.ClearCart();
-            //    return RedirectToAction("CheckoutComplete");
-            //}
-
+            _shoppingCart.ClearCart();
             return View();
         }
 

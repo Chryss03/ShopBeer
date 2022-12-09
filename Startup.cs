@@ -21,9 +21,7 @@ namespace ShopBeer
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-
+       
         private IConfigurationRoot _configurationRoot;
 
         public Startup(IWebHostEnvironment hostingEnvironment)
@@ -51,20 +49,19 @@ namespace ShopBeer
             services.AddSession();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            //loggerFactory.AddConsole();
+           
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
-            //app.UseMvcWithDefaultRoute();
+           
 
 
             app.UseRouting();

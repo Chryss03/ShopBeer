@@ -24,16 +24,6 @@ namespace ShopBeer.Controllers
             _appDbContext = appDbContext;
         }
 
-        //public ViewResult List()
-        //{
-
-        //    ProductListViewModel vm = new ProductListViewModel();
-        //    vm.Products = _productRepository.Products;
-        //    vm.CurrentCategory = "BeerCategory";
-
-        //    return View(vm);
-        //}
-
         public ViewResult List(string category)
         {
             string _category = category;
@@ -78,19 +68,8 @@ namespace ShopBeer.Controllers
         [HttpGet]
         public IActionResult Index(string searching)
         {
-            ViewData["GetProducts"] = searching;
-
-            //var prodquery = from x in _appDbContext.Products select x;
-            //if(!String.IsNullOrEmpty(searching))
-            //{
-            //    prodquery = prodquery.Where(x => x.Name.Contains(searching));
-            //}
-
-            //return View(await prodquery.AsNoTracking().ToListAsync());
-
-            string _searching = searching;
-            IEnumerable<Product> products = _productRepository.Products.OrderBy(n => n.ProductId);
-            string currentCategory = string.Empty;
+            ViewData["GetProducts"] = searching;            
+            IEnumerable<Product> products = _productRepository.Products.OrderBy(n => n.ProductId);          
 
             if (!string.IsNullOrEmpty(searching))
             {
@@ -102,7 +81,6 @@ namespace ShopBeer.Controllers
 
         public IActionResult Index()
         {
-            //var displaydata = _appDbContext.Products.ToList();
             return View();
         }
 

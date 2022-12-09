@@ -1,0 +1,17 @@
+j
+_C:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.csutf-8n
+cC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\Order\Checkout.cshtml.g.csutf-8n
+cC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\Product\Create.cshtml.g.csutf-8m
+bC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.csutf-8l
+aC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\Product\List.cshtml.g.csutf-8l
+aC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\Search\Index.cshtml.g.csutf-8†
+{C:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CategoryMenu\Default.cshtml.g.csutf-8Ž
+‚C:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ShoppingCartSummary\Default.cshtml.g.csutf-8v
+kC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ProductsSummary.cshtml.g.csutf-8n
+cC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.csutf-8u
+jC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Checkout.cshtml.g.csutf-8r
+gC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Index.cshtml.g.csutf-8z
+oC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\NoItemsInCart.cshtml.g.csutf-8l
+aC:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.csutf-8j
+_C:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.csutf-8k
+`C:\Users\micuc\source\repos\ShopBeer\obj\Debug\netcoreapp3.1\ShopBeer.RazorTargetAssemblyInfo.csutf-8

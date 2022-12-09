@@ -15,9 +15,7 @@ namespace ShopBeer.Data
 
             AppDbContext context = scopeeee.ServiceProvider.GetRequiredService<AppDbContext>();
 
-            //AppDbContext context =
-            //    applicationBuilder.ApplicationServices.GetRequiredService<AppDbContext>();
-
+           
             if (!context.Categories.Any())
             {
                 context.Categories.AddRange(Categories.Select(c => c.Value));
